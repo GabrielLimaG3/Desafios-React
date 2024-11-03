@@ -1,4 +1,6 @@
 import {styled} from "styled-components"
+import { IColunm } from "./types"
+
 
 export const Container = styled.main`
     width: 100%;
@@ -11,7 +13,7 @@ export const Container = styled.main`
     justify-content: space-between;
 `
 
-export const Colunm = styled.div`
+export const Colunm = styled.div<IColunm>`
     flex:${({flex}) => flex};
     padding-right: 23px;
 `

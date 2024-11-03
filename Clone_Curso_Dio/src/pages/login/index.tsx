@@ -10,6 +10,7 @@ import { useForm } from "react-hook-form"
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import api from "../../services/api"
+import { ILogin } from "./types"
 
 import {
     Container,
@@ -23,6 +24,8 @@ import {
     Wrapper
 } from "./styled"
 import { Column } from "../../components/Header/style"
+import { useContext } from "react"
+import { AuthContext } from "../../context/Auth"
 
 const schema = yup.object({
     email: yup.string().email("Email Invalido").required("Campo Obrigatorio"),
@@ -30,26 +33,18 @@ const schema = yup.object({
   }).required();
 
 const Login = () =>{
+
+    const {handleLogin} = useContext(AuthContext)
+
     const { control , handleSubmit, formState:{errors} } = useForm({
         resolver: yupResolver(schema),
         mode: "onChange"
     });
 
-    const onSubmit = async(formsdata) => {
-        try {
-            const {data} = await api.get(`/users?email=${formsdata.email}&password=${formsdata.password}`)
-            if(data.length === 1){
-                console.log(data)
-                nav("/feed")
-            }else{
-                alert("Email ou senha invalidos")
-            }
-        } catch (error) {
-            alert("Ocorreu um erro ao fazer login")
-        }
+    const onSubmit = async(formsdata: ILogin) => {
+        handleLogin(formsdata)
     }
 
-    const nav = useNavigate()
     return (
     <>
         <Header/>

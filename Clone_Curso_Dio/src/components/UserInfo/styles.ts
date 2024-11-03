@@ -1,4 +1,5 @@
 import {styled} from "styled-components"
+import { UserInfoStyled } from "./types"
 
 export const Container = styled.div`
     display: flex;
@@ -22,7 +23,7 @@ export const NameText = styled.div`
     color: #FFFFFF;
 `
 
-export const Process = styled.div`
+export const Process = styled.div<UserInfoStyled>`
     width: 180px;
     height: 6px;
     background-color: #FFFFFF;

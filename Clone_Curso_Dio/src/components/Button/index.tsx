@@ -1,11 +1,13 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { ButtonContainer } from "./styles"
+import { IButton } from "./types"
 
-const Button = (prop) => {
+const Button = ({variant,onClick,title}:IButton) => {
+
     return(
-        <ButtonContainer type={prop.type}  variant={prop.variant} onClick={prop.onClick}>
-            {prop.title}
+        <ButtonContainer variant={variant} onClick={onClick}>
+            {title}
         </ButtonContainer>
     )
 }

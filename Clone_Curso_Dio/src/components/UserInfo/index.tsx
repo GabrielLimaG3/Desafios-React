@@ -6,14 +6,14 @@ import {
     UserPicture,
     
 } from "./styles"
-
-const UserInfo = (prop) => {
+import { IUserInfo } from "./types"
+const UserInfo = ({image,name,percentual}:IUserInfo) => {
     return(
         <Container>
-            <UserPicture src={prop.image}/>
+            <UserPicture src={image}/>
             <div>
-                <NameText>{prop.name}</NameText>
-                <Process percentual={prop.percentual}/>
+                <NameText>{name}</NameText>
+                <Process percentual={percentual}/>
             </div>
         </Container>
     )

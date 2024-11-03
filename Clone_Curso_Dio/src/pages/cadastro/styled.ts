@@ -1,4 +1,5 @@
 import {styled, css} from "styled-components";
+import { ICadastroStyled } from "./types";
 
 export const ContainerFlex = styled.main`
     padding: 5%;
@@ -26,7 +27,7 @@ export const TitleForms = styled.h1`
     color: #ffffff;
 
 `
-export const SubTextForms = styled.p`
+export const SubTextForms = styled.p<ICadastroStyled>`
     color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
 

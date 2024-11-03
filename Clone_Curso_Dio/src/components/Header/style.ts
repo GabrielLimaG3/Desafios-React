@@ -32,6 +32,16 @@ export const Wrapper = styled.div`
     align-items: center;
 `
 
+export const ButtonExitFeed = styled.button`
+    margin: 12px 22px;
+    background-color: #443f53;
+    width: 78px;
+    border: none;
+    &:hover{
+        background-color: #443f538e;
+    }
+`
+
 export const BuscaInputContainer = styled.div`
     width: 185px;
     height: 30px;
